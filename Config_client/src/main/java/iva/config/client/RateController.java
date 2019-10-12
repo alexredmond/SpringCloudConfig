@@ -1,14 +1,31 @@
 package iva.config.client;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class RateController {
-	
+
+	@Value("${rate}")
 	String rate;
+	@Value("${lanecount}")
 	String lanecount;
-	String toll;
+	@Value("${tollstart}")
+	String tollstart;
 	
+	@Value("${test.property}")
+	String testProperty;
 
+	@RequestMapping("/rate")
+	public String getRate(Model m) {
+		m.addAttribute("rateamount", rate);
+		m.addAttribute("lanes", lanecount);
+		m.addAttribute("tollstart", tollstart);
+		m.addAttribute("testProperty", testProperty);
+
+		return "rateview";
+
+	}
 }
-
