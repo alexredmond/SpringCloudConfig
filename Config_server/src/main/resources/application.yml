@@ -9,6 +9,6 @@ spring:
                     uri: https://github.com/alexredmond/SpringCloudConfig
                     #username: u
                     #password: p
-                    search-paths:
+                    searchPaths:
                        - 'ConfigurationFiles/**'
                        - 'ConfigurationFiles/application.properties'
