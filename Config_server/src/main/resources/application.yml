@@ -1,14 +1,19 @@
 ---
 server:
     port: 8888
+    
 spring:
+    security:
+        user:
+            name: user
+            password: pass
     cloud:
         config:
             server:
                 git:
                     uri: https://github.com/alexredmond/SpringCloudConfig
-                    #username: u
-                    #password: p
+                    #username: gituser
+                    #password: gitpass
                     searchPaths:
                        - 'ConfigurationFiles/**'
                        - 'ConfigurationFiles/application.properties'
